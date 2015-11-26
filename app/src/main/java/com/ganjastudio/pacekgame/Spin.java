@@ -24,9 +24,10 @@ public class Spin extends Activity {
         AfterSpin
     }
 
-    RotateAnimation anim;
-    ImageView spinButton;
-    CountDownTimer countDownTimer;
+    RotateAnimation anim = null;
+    ImageView spinButton = null;
+    CountDownTimer countDownTimer = null;
+
     State state = State.NoSpin;
 
     @Override
@@ -118,7 +119,8 @@ public class Spin extends Activity {
 
     public void onStop () {
 
-        countDownTimer.cancel();
+        if(countDownTimer != null)
+            countDownTimer.cancel();
         super.onStop();
     }
 }
