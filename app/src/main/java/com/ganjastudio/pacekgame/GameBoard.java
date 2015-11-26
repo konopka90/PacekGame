@@ -1,49 +1,23 @@
 package com.ganjastudio.pacekgame;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.widget.EditText;
-import android.widget.ImageButton;
 
 
-public class WelcomeScreen extends Activity {
-
-    ImageButton startGameButton;
+public class GameBoard extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_welcome_screen);
-
-        addListenerOnButtonStartGame();
-    }
-
-    public void addListenerOnButtonStartGame() {
-
-        startGameButton = (ImageButton) findViewById(R.id.startGame);
-        startGameButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(WelcomeScreen.this, Spin.class);
-                startActivity(intent);
-            }
-
-        });
-
+        setContentView(R.layout.activity_game_board);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_welcome_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_main_board, menu);
         return true;
     }
 

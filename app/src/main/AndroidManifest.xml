@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Spin"
+            android:label="@string/title_activity_spin" >
+        </activity>
+        <activity
+            android:name=".GameBoard"
+            android:label="@string/title_activity_main_board" >
+        </activity>
     </application>
 
 </manifest>
