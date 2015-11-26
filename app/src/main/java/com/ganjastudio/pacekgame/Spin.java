@@ -26,6 +26,7 @@ public class Spin extends Activity {
 
     RotateAnimation anim;
     ImageView spinButton;
+    CountDownTimer countDownTimer;
     State state = State.NoSpin;
 
     @Override
@@ -72,7 +73,7 @@ public class Spin extends Activity {
 
     private void setupTimer()
     {
-        new CountDownTimer(3000, 1000) {
+        countDownTimer = new CountDownTimer(3000, 1000) {
 
             public void onTick(long millisUntilFinished) {
             }
@@ -88,7 +89,9 @@ public class Spin extends Activity {
 
                 state = State.NoSpin;
             }
-        }.start();
+        };
+
+        countDownTimer.start();
     }
 
     @Override
@@ -111,5 +114,11 @@ public class Spin extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onStop () {
+
+        countDownTimer.cancel();
+        super.onStop();
     }
 }
