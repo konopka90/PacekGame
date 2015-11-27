@@ -30,12 +30,16 @@ public class WelcomeScreen extends Activity {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(WelcomeScreen.this, Spin.class);
                 startActivity(intent);
             }
 
         });
 
+    }
+
+    public void startWiki(View view) {
+        Intent intent = new Intent(this, WikiActivity.class);
+        startActivity(intent);
     }
 }

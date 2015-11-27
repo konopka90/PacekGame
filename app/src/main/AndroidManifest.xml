@@ -24,6 +24,13 @@
             android:name=".GameBoard"
             android:label="@string/title_activity_main_board" >
         </activity>
+        <activity android:name=".WikiActivity" >
+        </activity>
+        <activity
+            android:name=".WikiItemActivity"
+            android:label="@string/title_activity_wiki_item"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
