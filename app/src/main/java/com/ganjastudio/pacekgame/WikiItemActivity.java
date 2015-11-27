@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class WikiItemActivity extends AppCompatActivity {
@@ -47,12 +48,13 @@ public class WikiItemActivity extends AppCompatActivity {
         String title = intent.getStringExtra("title");
 
         String[] wikiItems = getResources().getStringArray(R.array.wiki_array);
+
         toolbar.setTitle(title);
 
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), title);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -67,8 +69,11 @@ public class WikiItemActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        private String title;
+
+        public SectionsPagerAdapter(FragmentManager fm, String title) {
             super(fm);
+            this.title = title;
         }
 
         @Override
@@ -127,8 +132,12 @@ public class WikiItemActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_wiki_item, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
+
+            image.setImageResource( R.drawable.pacek );
+
+            TextView textView = (TextView) rootView.findViewById(R.id.textView);
+            textView.setText("siemano ");
             return rootView;
         }
     }
