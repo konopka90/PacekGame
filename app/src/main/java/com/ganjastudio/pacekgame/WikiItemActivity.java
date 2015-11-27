@@ -44,10 +44,10 @@ public class WikiItemActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Intent intent = this.getIntent();
-        int postion = intent.getIntExtra("position", 0);
+        String title = intent.getStringExtra("title");
 
         String[] wikiItems = getResources().getStringArray(R.array.wiki_array);
-        toolbar.setTitle(wikiItems[postion]);
+        toolbar.setTitle(title);
 
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three

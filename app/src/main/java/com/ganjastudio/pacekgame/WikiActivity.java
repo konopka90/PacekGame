@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -23,7 +24,7 @@ public class WikiActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wiki);
 
-        ListView listVeiw = (ListView) findViewById(R.id.listView);
+        final ListView listVeiw = (ListView) findViewById(R.id.listView);
 
         List<String> wikiItems = Arrays.asList(this.getResources().getStringArray(R.array.wiki_array));
         Collections.sort(wikiItems);
@@ -34,9 +35,11 @@ public class WikiActivity extends Activity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Log.println(Log.DEBUG, "PacekGame", "position = " + position);
+
+                TextView txt = (TextView)parent.getChildAt(position - listVeiw.getFirstVisiblePosition());
+
                 Intent intent = new Intent(WikiActivity.this, WikiItemActivity.class);
-                intent.putExtra("position", position);
+                intent.putExtra("title", txt.getText());
                 startActivity(intent);
             }
         });
