@@ -19,26 +19,19 @@ public class WelcomeScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
-
-        addListenerOnButtonStartGame();
-    }
-
-    public void addListenerOnButtonStartGame() {
-
-        startGameButton = (ImageButton) findViewById(R.id.startGame);
-        startGameButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(WelcomeScreen.this, Spin.class);
-                startActivity(intent);
-            }
-
-        });
-
     }
 
     public void startWiki(View view) {
+        Intent intent = new Intent(this, WikiActivity.class);
+        startActivity(intent);
+    }
+
+    public void startGame(View view) {
+        Intent intent = new Intent(this, Spin.class);
+        startActivity(intent);
+    }
+
+    public void startSettings(View view) {
         Intent intent = new Intent(this, WikiActivity.class);
         startActivity(intent);
     }

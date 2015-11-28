@@ -37,7 +37,17 @@
             android:id="@+id/startGame"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/button_game"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="30dp"
+            android:onClick="startGame" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:id="@+id/startSettings"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_settings"
+            android:layout_marginTop="30dp"
+            android:onClick="startSettings" />
     </LinearLayout>
 
 </RelativeLayout>
