@@ -32,7 +32,7 @@ public class WelcomeScreen extends Activity {
     }
 
     public void startSettings(View view) {
-        Intent intent = new Intent(this, WikiActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 }

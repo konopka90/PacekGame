@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <MultiSelectListPreference
+        android:entries="@array/gadgets_array"
+        android:entryValues="@array/gadgets_array"
+        android:key="gadgets"
+        android:title="Dostepne gadzety" />
+
+    <PreferenceCategory
+        android:title="Dostepne gadzety">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="gadget_bongo"
+            android:title="Bongo"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="gadget_lufka"
+            android:title="Lufka"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="gadget_nokaut"
+            android:title="Nokaut"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="gadget_wiadro"
+            android:title="Wiadro"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
