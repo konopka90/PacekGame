@@ -1,9 +1,4 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <MultiSelectListPreference
-        android:entries="@array/gadgets_array"
-        android:entryValues="@array/gadgets_array"
-        android:key="gadgets"
-        android:title="Dostepne gadzety" />
 
     <PreferenceCategory
         android:title="Dostepne gadzety">

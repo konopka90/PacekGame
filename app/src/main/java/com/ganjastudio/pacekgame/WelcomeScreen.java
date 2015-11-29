@@ -3,6 +3,7 @@ package com.ganjastudio.pacekgame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,10 +20,11 @@ public class WelcomeScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
+        PreferenceManager.setDefaultValues(this, R.xml.pref_gameplay, false);
     }
 
     public void startWiki(View view) {
-        Intent intent = new Intent(this, WikiActivity.class);
+        Intent intent = new Intent(this, WikipediaActivity.class);
         startActivity(intent);
     }
 
