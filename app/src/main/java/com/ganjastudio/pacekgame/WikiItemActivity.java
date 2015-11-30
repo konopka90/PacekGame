@@ -1,6 +1,7 @@
 package com.ganjastudio.pacekgame;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +21,9 @@ import android.view.ViewGroup;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class WikiItemActivity extends AppCompatActivity {
 
@@ -80,7 +85,7 @@ public class WikiItemActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return PlaceholderFragment.newInstance(position + 1, title);
         }
 
         @Override
@@ -112,15 +117,17 @@ public class WikiItemActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String ARG_TITLE = "title";
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
+        public static PlaceholderFragment newInstance(int sectionNumber, String title) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            args.putString(ARG_TITLE, title);
             fragment.setArguments(args);
             return fragment;
         }
@@ -131,13 +138,27 @@ public class WikiItemActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+            int sectionNumber = this.getArguments().getInt(ARG_SECTION_NUMBER)-1;
+            String title = this.getArguments().getString(ARG_TITLE);
+            Log.println(Log.DEBUG, "packopedia", "title = " + "packopedia_array_images_"+title.toLowerCase());
+
+
+            int images_id = this.getResources().getIdentifier("packopedia_array_images_"+title.toLowerCase(), "array", "com.ganjastudio.pacekgame");
+            TypedArray images = this.getResources().obtainTypedArray(images_id);
+
+            int strings_id = this.getResources().getIdentifier("packopedia_array_strings_"+title.toLowerCase(), "array", "com.ganjastudio.pacekgame");
+            String[] strings = this.getResources().getStringArray(strings_id);
+
+
             View rootView = inflater.inflate(R.layout.fragment_wiki_item, container, false);
             ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
 
-            image.setImageResource( R.drawable.pacek );
+            image.setImageDrawable(images.getDrawable(sectionNumber));
 
             TextView textView = (TextView) rootView.findViewById(R.id.textView);
-            textView.setText("siemano ");
+            textView.setText( strings[sectionNumber]);
+
             return rootView;
         }
     }

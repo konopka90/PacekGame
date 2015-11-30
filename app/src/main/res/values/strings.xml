@@ -25,13 +25,6 @@
     <!-- Settings Gameplay strings -->
     <string name="pref_header_gameplay">Rozgrywka</string>
     <string name="pref_category_gadgets">Dostepne gadzety</string>
-    <string-array name="gadgets_array">
-        <item>Bongo</item>
-        <item>Wiadro</item>
-        <item>Nietoperz</item>
-        <item>Pacek</item>
-        <item>Lufka</item>
-    </string-array>
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>
     <string name="pref_description_social_recommendations">Recommendations for people to contact

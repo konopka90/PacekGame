@@ -49,6 +49,8 @@ public class WikipediaActivity extends AppCompatActivity {
 
                 TextView txt = (TextView) parent.getChildAt(position - listView.getFirstVisiblePosition());
 
+
+
                 Intent intent = new Intent(WikipediaActivity.this, WikiItemActivity.class);
                 intent.putExtra("title", txt.getText());
                 startActivity(intent);

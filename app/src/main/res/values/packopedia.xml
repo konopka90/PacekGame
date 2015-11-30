@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="packopedia_array_images_pacek">
+        <item>@drawable/pacek</item>
+        <item>@drawable/pacek2</item>
+        <item>@drawable/pacek3</item>
+    </array>
+    <array name="packopedia_array_strings_pacek">
+        <item>To jest pod packiem 1</item>
+        <item>To jest pod packiem 2</item>
+        <item>To jest pod packiem 2</item>
+    </array>
+</resources>
