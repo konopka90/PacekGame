@@ -29,7 +29,6 @@ public class WikipediaActivity extends AppCompatActivity {
     {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         String title = getResources().getString(R.string.title_wiki_activity);
-        //toolbar.setTitle(title);
         getSupportActionBar().setTitle(title);
     }
 

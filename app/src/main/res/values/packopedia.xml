@@ -4,10 +4,12 @@
         <item>@drawable/pacek</item>
         <item>@drawable/pacek2</item>
         <item>@drawable/pacek3</item>
+        <item>@drawable/pacek</item>
     </array>
     <array name="packopedia_array_strings_pacek">
         <item>To jest pod packiem 1</item>
         <item>To jest pod packiem 2</item>
-        <item>To jest pod packiem 2</item>
+        <item>To jest pod packiem 3</item>
+        <item>To jest pod packiem 4</item>
     </array>
 </resources>

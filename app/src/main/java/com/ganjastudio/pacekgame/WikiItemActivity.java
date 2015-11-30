@@ -75,10 +75,15 @@ public class WikiItemActivity extends AppCompatActivity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private String title;
+        private int size;
 
         public SectionsPagerAdapter(FragmentManager fm, String title) {
             super(fm);
             this.title = title;
+
+            int images_id = WikiItemActivity.this.getResources().getIdentifier("packopedia_array_images_"+title.toLowerCase(), "array", "com.ganjastudio.pacekgame");
+            TypedArray images = WikiItemActivity.this.getResources().obtainTypedArray(images_id);
+            size = images.length();
         }
 
         @Override
@@ -91,7 +96,7 @@ public class WikiItemActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return size;
         }
 
         @Override
